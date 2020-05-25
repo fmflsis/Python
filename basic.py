@@ -100,11 +100,42 @@ def is_odd(num):
 is_odd(1)
 is_odd(2)
 is_odd(3)
-'''
+
 def is_avg(*num):
     total = sum(num)
     print(total/len(num))
 
 is_avg(1,3,6)
 is_avg(1,7,8,2)
+'''
 
+# 전역 변수
+# x = 10
+# def foo():
+#     print(x) #전역변수 출력
+
+# foo()
+# print(x) #전역변수 출력
+
+# def spam():
+#     eggs = 99
+#     bacon()
+#     print(eggs)
+
+# def bacon():
+#     ham = 101
+#     eggs = 0
+
+# spam()   
+
+# 에러처리 try/except
+def div10(num) :
+    try:
+        return 10/num
+    except ZeroDivisionError : #무슨에러인지 알때 (0으로 나누면 안되는거)
+        print('에러: 0으로 나눌수 없음')
+    # except : 모를때 표기
+    # return 이 없는 함수는 none을 리턴
+print(div10(2))
+print(div10(0))
+print(div10(5))
