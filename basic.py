@@ -129,13 +129,105 @@ is_avg(1,7,8,2)
 # spam()   
 
 # 에러처리 try/except
-def div10(num) :
-    try:
-        return 10/num
-    except ZeroDivisionError : #무슨에러인지 알때 (0으로 나누면 안되는거)
-        print('에러: 0으로 나눌수 없음')
-    # except : 모를때 표기
-    # return 이 없는 함수는 none을 리턴
-print(div10(2))
-print(div10(0))
-print(div10(5))
+# def div10(num) :
+#     try:
+#         return 10/num
+#     except ZeroDivisionError : #무슨에러인지 알때 (0으로 나누면 안되는거)
+#         print('에러: 0으로 나눌수 없음')
+#     # except : 모를때 표기
+#     # return 이 없는 함수는 none을 리턴
+# print(div10(2))
+# print(div10(0))
+# print(div10(5))
+
+# 리스트와 튜플 []. ()
+# ham = ['개','고양이','박쥐','곰']
+# ham [1:] #리스트 1번부터 끝까지
+# ham [1:3] #리스트 1번부터 3까지
+# ham [:2] #리스트 처음부터 2까지
+
+#인덱스는 수정가능하나 문자열은 수정 불가능
+
+#예제 1~2 숫자 소수 문자열 리스트가 들어있는 myList 생성
+# myList =[1,1.1,'111',[1,2,3]]
+# print(myList)
+# print(type(myList[0]),type(myList[1]),type(myList[2]),type(myList[3]))
+
+# # 문자열 바꾸기 replace
+# a = "인생은 짧다."
+# print(a.replace)
+# print(a)
+
+# 문자열 포매팅
+
+# # %d 숫자
+# number=7
+# print('나는 도시락 %d 개를 먹었다.' %number)
+# print('나는 도시락 %s 개를 먹었다.' %'여러')
+# print("나는 도시락 %d 개를 %s 먹었다." % (7, '배터지게'))
+
+# # 포맷 함수 format 이용
+# print("나는 도시락 {} 개를 먹었다." .format('여러'))    #포맷 함수를 사용
+# print("나는 도시락 {} 개를 먹었다." .format(1/2))
+
+# #여러개 일때
+# print("나는 도시락 {} 개를 {}먹었다." .format(3, '여러개 '))    #다중 괄호 적용
+# print("나는 도시락 {1} 개를 {0}먹었다." .format(3, '여러개 '))  #괄호의 숫자 순서대로 들어감
+
+
+# 파일 생성하기
+# f = open('fruits.txt', encoding='utf-8')
+# # print(f.read()) #커서가 있어서 두번 안 읽어짐
+# content = f.read()
+# f.close()
+# print(content)      # 여러개 가능
+# print(content)
+
+#파일을 with 로 열기 (알아서 닫아줌)
+# with open('fruits.txt', encoding='utf-8') as f:
+#     content = f.read()
+
+# print(content)
+# print(content)
+
+
+# # 파일 쓰기 (없으면 생성)
+# with open('vegi.txt','w', encoding='utf-8') as f:
+#     f.write('무\n')
+#     f.write('배추\n')
+#     f.write('토마토\n')
+#     f.write('브로콜리\n')
+
+# 파일 쓰기 (없으면 생성)
+# with open('vegi.txt','a', encoding='utf-8') as f:
+#     f.write('무\n')
+#     f.write('배추\n')
+#     f.write('토마토\n')
+#     f.write('브로콜리\n')
+
+# with open('vegi.txt','a+', encoding='utf-8') as f:
+#     f.write('붙여쓰기\n')
+#     f.seek(0) # 커서를 첫번째 줄로 이동
+#     content = f.read()
+
+# print(content)
+# with open('fruits.txt', encoding='utf-8') as a:
+#      content1 = a.read()
+
+# with open('vegi.txt', encoding='utf-8') as b:
+#      content2 = b.read()
+
+# with open('fruitVegi.txt','a+', encoding='utf-8') as f:
+#     f.write(content1)
+#     f.write(content2)
+#     f.seek(0) # 커서를 첫번째 줄로 이동
+#     content = f.read()
+# print(content)
+
+# 무한 반복 파일 읽어오기
+import time #시간 조절
+
+while True:
+    with open('vegi.txt', encoding='utf-8') as f:
+        print(f.read())
+        time.sleep(1) #초당 단위

@@ -6,4 +6,4 @@ print('당신의 이름의 길이는 : ')
 print(len(myName))  #len 문자열의 길이
 print('당신의 나이는?') #나이묻기
 myAge = input() #나이 입력
-print('당신은 내년에' + str(int(myAge)+1)+'살 입니다.')
+print('당신은 내년에' + str(int(myAge)+1)+'살 입니다.')x = 
